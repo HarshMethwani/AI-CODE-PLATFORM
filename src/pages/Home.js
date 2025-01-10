@@ -14,7 +14,7 @@ const Home = () => {
     const generateChallenge = async () => {
         setLoading(true); // Show loading for the Generate button
         try {
-            const response = await axios.post('http://localhost:5001/generate-challenge', { difficulty });
+            const response = await axios.post('https://ai-code-platform.onrender.com/generate-challenge', { difficulty });
             console.log('Generated Challenge:', response.data); // Debug lo
             const generatedChallenge = response.data.description;
             setChallenge(generatedChallenge); // Set the challenge description
@@ -30,7 +30,7 @@ const Home = () => {
     const gradeCode = async () => {
         setLoading(true); // Show loading for the Submit button
         try {
-            const response = await axios.post('http://localhost:5001/grade-code', {
+            const response = await axios.post('https://ai-code-platform.onrender.com/grade-code', {
                 userCode, // User's code
                 question: challenge, // Challenge description
             });
