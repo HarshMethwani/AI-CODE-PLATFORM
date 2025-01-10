@@ -10,6 +10,7 @@ CORS(app)
 
 # Configure Gemini API
 api_key = os.getenv("api_key")
+port = os.getenv("PORT")
 genai.configure(api_key=api_key)  # Use your GCP API key here
 model = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -71,4 +72,4 @@ def grade_code():
     })
 
 if __name__ == '__main__':
-    app.run(port=5001)
+    app.run(port=port)
